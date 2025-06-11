@@ -12,7 +12,7 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Read the full file and sort by Timestamp
 print(f"Reading file {SOURCE_FILE}...")
-full_file = pd.read_csv(SOURCE_FILE)
+full_file = pd.read_csv(SOURCE_FILE).sort_values(by="Timestamp", ascending=True)
 full_file.sort_values(by="Timestamp", inplace=True)
 
 # Compute the split indices
